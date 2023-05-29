@@ -1,43 +1,23 @@
 import path from 'path';
 import webpack from 'webpack';
-import HTMLWebpackPlugin from "html-webpack-plugin"
+import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
+import {BuildPaths} from "./config/build/types/config";
 
-const config: webpack.Configuration = {
-    mode: 'development',
-    // точка входа
+// объект с путями:
+const paths: BuildPaths = {
     entry: path.resolve(__dirname, 'src', 'index.ts'),
-    // выхода - куда компилилируется файл сборки
-    output: {
-        // contenthash -  чтобы уникальный файл компилился и не кешерировался не запоминался
-        filename: "[name].[contenthash].js",
-        path: path.resolve(__dirname, 'build'),
-        // чистим после сборки все файлы удаляем
-        clean: true
-    },
-    plugins: [
-        new HTMLWebpackPlugin({
-            // используем как шаблон чтобы в него встраивались скрипты
-            template: path.resolve(__dirname, 'public', 'index.html')
-        }),
-        new webpack.ProgressPlugin(),
-    ],
-    module: {
-        // rules - самое важное вебпака --- тут конфигурируем loaders - предназначены чтобы обрабатывать файлы которые выходят за рамки js json: css typescript png и тд.
-        rules: [
-            {
-                // находим файлы которые пропускаем через лоадеры
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                // исключить файлы в папке node_modules - их обрабатывать не нужно
-                exclude: /node_modules/,
-            }
-        ],
-    },
-    // расширения тех файлов для которых при импорте не будем указывать расширение
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-    },
+    build: path.resolve(__dirname, 'build'),
+    html: path.resolve(__dirname, 'public', 'index.html'),
 }
+
+const mode = 'development';
+const isDev = mode === 'development';
+
+const config: webpack.Configuration = buildWebpackConfig({
+    mode: 'development',
+    paths,
+    isDev,
+})
 
 export default config;
 
