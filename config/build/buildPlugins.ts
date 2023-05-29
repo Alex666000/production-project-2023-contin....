@@ -11,10 +11,3 @@ export function buildPlugins({paths}: BuildOptions, progressPlugins: any = [
 
     return progressPlugins
 }
-
-/*
-paths - путь до файлика с html-кой
-
-    // возвращаем массив плагинов
-
- */
