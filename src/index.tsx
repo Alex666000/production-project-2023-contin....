@@ -1,12 +1,14 @@
 import {render} from "react-dom";
 import React from "react";
 import App from "./App";
+import {BrowserRouter} from "react-router-dom";
 
 
 render(
     <div>
-        <App/>
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
     </div>,
-    // куда рендерить будем компонент
     document.getElementById('root')
 )
