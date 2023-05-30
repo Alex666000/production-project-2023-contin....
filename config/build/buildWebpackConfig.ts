@@ -21,7 +21,10 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         module: {
             rules: buildLoaders(options),
         },
-        resolve: buildResolvers(),
+        resolve: {
+            ...buildResolvers(),
+            preferRelative: true, // Добавленная опция preferRelative: true
+        },
         //source-map
         devtool: isDev ? 'inline-source-map' : undefined,
         // devServer
