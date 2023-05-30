@@ -9,6 +9,7 @@ export function buildLoaders(): webpack.RuleSetRule[] {
     }
 
     return [
+        // возвращаем список лоадеров
         typescriptLoader,
     ]
 }

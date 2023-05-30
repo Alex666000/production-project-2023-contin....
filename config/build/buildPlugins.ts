@@ -1,8 +1,8 @@
 import HTMLWebpackPlugin from "html-webpack-plugin";
-import webpack from "webpack";
-import {BuildOptions} from "config/build/types/config";
+import webpack, { ProgressPlugin }  from "webpack";
+import {BuildOptions} from "./types/config";
 
-export function buildPlugins({paths}: BuildOptions, progressPlugins: any = [
+export function buildPlugins({paths}: BuildOptions, progressPlugins: (HTMLWebpackPlugin | ProgressPlugin)[] = [
     new HTMLWebpackPlugin({
         template: paths.html,
     }),
