@@ -1,7 +1,7 @@
 import React from 'react';
 import {classNames} from "shared/lib/classNames/classNames";
 import cls from './Navbar.module.scss'
-import {AppLink, AppLinkTheme} from "shared/ui/AppLink";
+import {AppLink, AppLinkTheme} from "shared/ui/AppLink/AppLink";
 
 interface NavbarProps {
     // компонент из вне будет получать дополнительный класс (поправить отступы или изменить размеры чтобы...)
