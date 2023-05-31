@@ -8,6 +8,8 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
         open: true,
         // для реакт-роутера...
         historyApiFallback: true,
+        // hot reloading
+        hot: true
 
     }
 }
