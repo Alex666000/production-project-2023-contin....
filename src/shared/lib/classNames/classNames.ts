@@ -6,7 +6,8 @@ export function classNames(cls: string, mods: Mods = {}, additional: string[] = 
     // возвращаем строку классов
     return [
         cls,
-        ...additional,
+        // чтобы не прилетали в массив undefined
+        ...additional.filter(Boolean),
         ...Object.entries(mods)
             .filter(([className, value]) => Boolean(value))
             .map(([className]) => className)
