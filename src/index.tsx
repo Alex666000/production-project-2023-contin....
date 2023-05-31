@@ -1,10 +1,9 @@
 import {render} from "react-dom";
 import React from "react";
-import App from "./App";
+import App from "./app/App";
 import {BrowserRouter} from "react-router-dom";
 // index.scss импортием в Арр чтобы стили применились дЛя всех вложенных компонентов
-import 'styles/index.scss'
-import ThemeProvider from "./theme/ThemeProvider";
+import {ThemeProvider} from "app/providers/ThemeProvider";
 
 
 render(

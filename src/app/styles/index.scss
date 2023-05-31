@@ -1,5 +1,6 @@
 // сюда все файлы стилей что сделали импортируем - этот файлик корневой === точка  входа для стилей (а сам index.scss импортием в Арр чтобы стили применились дЛя всех вложенных компонентов)
 @import "reset";
+@import "reset";
 @import "variables/global";
 @import "themes/normal";
 @import "themes/dark";
