@@ -2,7 +2,7 @@
 type Mods = Record<string, boolean | string>
 
 
-export function classNames(cls: string, mods: Mods, additional: string[]): string {
+export function classNames(cls: string, mods: Mods = {}, additional: string[] = []): string {
     // возвращаем строку классов
     return [
         cls,
@@ -17,7 +17,10 @@ export function classNames(cls: string, mods: Mods, additional: string[]): strin
 
 
 /*
+'remove-btn' - основной класс
+
 mods - объект,  ключ название класса а значение булеан флаг  если true класс добавим иначе нет
+
 additional - массив дополнительных классов
 
 Record из ТС - в качестве ключа строка а значение булеан
