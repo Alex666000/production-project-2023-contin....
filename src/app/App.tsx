@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/lib/classNames/classNames";
 import './styles/index.scss';
@@ -12,12 +12,14 @@ const App = () => {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Navbar/>
-            <div className='content-page'>
-                {/*страница и Sidebar должны быть в одной строчке одном блоке*/}
-                <Sidebar/>
-                <AppRouter/>
-            </div>
+            <Suspense fallback=''>
+                <Navbar/>
+                <div className='content-page'>
+                    {/*страница и Sidebar должны быть в одной строчке одном блоке*/}
+                    <Sidebar/>
+                    <AppRouter/>
+                </div>
+            </Suspense>
         </div>
     );
 };
