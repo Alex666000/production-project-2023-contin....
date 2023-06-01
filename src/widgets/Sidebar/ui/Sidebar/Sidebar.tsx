@@ -9,33 +9,33 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ className }: SidebarProps) => {
-  // по умолчанию развернем Сайдбар
-  const [collapsed, setCollapsed] = useState(false);
+    // по умолчанию развернем Сайдбар
+    const [collapsed, setCollapsed] = useState(false);
 
-  const onToggle = () => {
+    const onToggle = () => {
     // сворачиваем и разворачиваем
-    setCollapsed((prev) => !prev);
-  };
-  const toggleButtonText = 'toggle';
-  return (
+        setCollapsed((prev) => !prev);
+    };
+    const toggleButtonText = 'toggle';
+    return (
         <div
             // сворачиваем или разворачиваем
             className={classNames(cls.Sidebar, {
-              [cls.collapsed]: collapsed,
+                [cls.collapsed]: collapsed,
             }, [className])}
         >
-              <button
-                  type="button"
-                  onClick={onToggle}
-              >
-                    {toggleButtonText}
-              </button>
-              <div className={cls.switchers}>
-                    <ThemeSwitcher />
-                    <LangSwitcher className={cls.lang} />
-              </div>
+            <button
+                type="button"
+                onClick={onToggle}
+            >
+                {toggleButtonText}
+            </button>
+            <div className={cls.switchers}>
+                <ThemeSwitcher />
+                <LangSwitcher className={cls.lang} />
+            </div>
         </div>
-  );
+    );
 };
 
 /*

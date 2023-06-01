@@ -11,14 +11,14 @@ const homeLinkText = 'Главная';
 const aboutUsText = 'О себе';
 
 export const Navbar = ({ className }: NavbarProps) => (
-      <div className={classNames(cls.Navbar, {}, [className])}>
-            <div className={cls.links}>
-                  <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={cls.mainLink}>
-                        {homeLinkText}
-                  </AppLink>
-                  <AppLink theme={AppLinkTheme.RED} to="/about">
-                        {aboutUsText}
-                  </AppLink>
-            </div>
-      </div>
+    <div className={classNames(cls.Navbar, {}, [className])}>
+        <div className={cls.links}>
+            <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={cls.mainLink}>
+                {homeLinkText}
+            </AppLink>
+            <AppLink theme={AppLinkTheme.RED} to="/about">
+                {aboutUsText}
+            </AppLink>
+        </div>
+    </div>
 );

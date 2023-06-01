@@ -18,23 +18,23 @@ interface AppLinkProps extends LinkProps {
 
 // кастомная ссылка - в приложении все ссылки меняем на кастомные
 export const AppLink: FC<AppLinkProps> = (props) => {
-  const {
-    to,
-    children,
-    className,
-    // тема по умолчанию
-    theme = AppLinkTheme.PRIMARY,
-    ...otherProps
-  } = props;
+    const {
+        to,
+        children,
+        className,
+        // тема по умолчанию
+        theme = AppLinkTheme.PRIMARY,
+        ...otherProps
+    } = props;
 
-  return (
+    return (
         <Link
             to={to}
             // передаем тему
             className={classNames(cls.AppLink, {}, [className, cls[theme]])}
             {...otherProps}
         >
-              {children}
+            {children}
         </Link>
-  );
+    );
 };
