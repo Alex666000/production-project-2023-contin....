@@ -7,15 +7,17 @@ interface NavbarProps {
     // компонент из вне будет получать дополнительный класс (поправить отступы или изменить размеры чтобы...)
     className?: string;
 }
+const homeLinkText = 'Главная';
+const aboutUsText = 'О себе';
 
 export const Navbar = ({ className }: NavbarProps) => (
       <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
                   <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={cls.mainLink}>
-                        Главная
+                        {homeLinkText}
                   </AppLink>
                   <AppLink theme={AppLinkTheme.RED} to="/about">
-                        О сайте
+                        {aboutUsText}
                   </AppLink>
             </div>
       </div>

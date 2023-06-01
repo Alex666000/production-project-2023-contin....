@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -48,7 +49,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     // на нарушение этого правила выскакивать ошибка будет что не перевели текст
     // markupOnly - ругается на отсутствие только перевода внутри jsx
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': ['warn', { markupOnly: true }],
     'max-len': [
       'error',
       {

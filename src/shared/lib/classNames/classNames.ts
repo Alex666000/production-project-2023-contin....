@@ -19,6 +19,8 @@ export function classNames(cls: string, mods: Mods = {}, additional: string[] = 
 
 mods - объект,  ключ название класса а значение булеан флаг  если true класс добавим иначе нет
 
+mods - добавляются в самый конец например: const expected = 'someClass class1 class2 hovered scrollable';
+
 additional - массив дополнительных классов
 
 Record из ТС - в качестве ключа строка а значение булеан
