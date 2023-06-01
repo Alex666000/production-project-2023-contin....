@@ -1,20 +1,12 @@
-// сюда все файлы стилей что сделали импортируем - этот файлик корневой === точка  входа для стилей (а сам index.scss импортием в Арр чтобы стили применились дЛя всех вложенных компонентов)
 @import "reset";
 @import "variables/global";
 @import "themes/normal";
 @import "themes/dark";
 
 .app {
-    // применяем шрифты из variables/global
-    font: var(--font-m); // этот шрифт по умолчанию использовать будем во всех текстах приложения
-
-    // переменная для цвета заднего фона
+    font: var(--font-m);
     background: var(--bg-color);
-
-    // для шрифта
     color: var(--primary-color);
-
-    // минимальна высота нашего приложения
     min-height: 100vh;
 }
 
@@ -26,7 +18,3 @@
     flex-grow: 1;
     padding: 20px;
 }
-
-/*
-var(--primary-color) -- использование css переменных
- */

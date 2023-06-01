@@ -1,21 +1,15 @@
 .Sidebar {
-    // распологается на всю высоту стр. за исключением шапки === Навбара...
     height: calc(100vh - var(--navbar-height));
     width: var(--sidebar-width);
-
-    // цвет заднего фона такой же как и у Навбара
     background: var(--inverted-bg-color);
-
-    // чтобы кнопку поставить на правильное место
     position: relative;
-    transition: width 0.4s;
+    transition: width 0.3s;
 }
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
 }
 
-// Переключатели переносим вниз...
 .switchers {
     position: absolute;
     bottom: 20px;

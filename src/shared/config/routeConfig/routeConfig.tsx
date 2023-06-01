@@ -1,6 +1,5 @@
 import { RouteProps } from 'react-router-dom';
 import { MainPage } from 'pages/MainPage';
-import React from 'react';
 import { AboutPage } from 'pages/AboutPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 
@@ -10,30 +9,24 @@ export enum AppRoutes {
     NOT_FOUND = 'not_found',
 }
 
-// для каждого маршрута укажем путь до соответствующего компонента
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
-    // '*' - охватывать все маршруты если не один маршрут не отработал
+    // последний
     [AppRoutes.NOT_FOUND]: '*',
 };
 
-// роуты: маршрут для них и компонент который должны отрисовывать
 export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.MAIN]: {
-        path: RoutePath[AppRoutes.MAIN],
+        path: RoutePath.main,
         element: <MainPage />,
     },
     [AppRoutes.ABOUT]: {
-        path: RoutePath[AppRoutes.ABOUT],
+        path: RoutePath.about,
         element: <AboutPage />,
     },
     [AppRoutes.NOT_FOUND]: {
-        path: RoutePath[AppRoutes.NOT_FOUND],
+        path: RoutePath.not_found,
         element: <NotFoundPage />,
     },
 };
-
-/*
-RouteProps -- тип из react-router-dom
-*/

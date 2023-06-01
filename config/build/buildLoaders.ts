@@ -34,13 +34,12 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
                 loader: 'css-loader',
-                // настроики лоадера
                 options: {
                     modules: {
-                        // для module-ей
                         auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-                        // для просто scss - в продакшн и дев режимах
-                        localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
+                        localIdentName: isDev
+                            ? '[path][name]__[local]--[hash:base64:5]'
+                            : '[hash:base64:8]',
                     },
                 },
             },
@@ -48,7 +47,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         ],
     };
 
-    // Если не использовали бы TS - нужен был бы babel --- лоадер у нас уже есть
+    // Если не используем тайпскрипт - нужен babel-loader
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -56,7 +55,6 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     };
 
     const fileLoader = {
-    // обрабатывает файлы с таким расширением
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
         use: [
             {

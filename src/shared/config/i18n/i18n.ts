@@ -9,10 +9,7 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-    // язык по умолчанию
         fallbackLng: 'en',
-        // спамить в консоль подгрузку переводов, отсутствующие ключи
-        // дебаг интернационализации настроили чтоб работал в режиме разработки
         debug: __IS_DEV__,
 
         interpolation: {
@@ -25,7 +22,3 @@ i18n
     });
 
 export default i18n;
-
-/*
-.use - подключение плагинов
- */

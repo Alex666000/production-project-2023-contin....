@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import React from 'react';
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
-import DarkIcon from 'shared/assets/icons/theme-dark.svg';
 import LightIcon from 'shared/assets/icons/theme-light.svg';
+import DarkIcon from 'shared/assets/icons/theme-dark.svg';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
 interface ThemeSwitcherProps {
@@ -22,7 +22,3 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
         </Button>
     );
 };
-/*
-ThemeSwitcher - главный класс
-className - пропс который принимаем из вне
- */

@@ -4,25 +4,21 @@ import { FC } from 'react';
 import cls from './AppLink.module.scss';
 
 export enum AppLinkTheme {
-    PRIMARY = 'primary', // основная тема
-    SECONDARY = 'primary', // тема в инвертед -- противоположным цветом
-    // чтобы внедрить новую тему добавляем + добавляем сам класс в AppLink.module.scss + в Navbar меняем тему на red:
+    PRIMARY = 'primary',
+    SECONDARY = 'secondary',
     RED = 'red',
 }
 
 interface AppLinkProps extends LinkProps {
-    className?: string
-    // темы для ui kit
-    theme?: AppLinkTheme
+    className?: string;
+    theme?: AppLinkTheme;
 }
 
-// кастомная ссылка - в приложении все ссылки меняем на кастомные
 export const AppLink: FC<AppLinkProps> = (props) => {
     const {
         to,
-        children,
         className,
-        // тема по умолчанию
+        children,
         theme = AppLinkTheme.PRIMARY,
         ...otherProps
     } = props;
@@ -30,8 +26,7 @@ export const AppLink: FC<AppLinkProps> = (props) => {
     return (
         <Link
             to={to}
-            // передаем тему
-            className={classNames(cls.AppLink, {}, [className, cls[theme]])}
+            className={classNames(cls.AppLink, { [cls[theme]]: true }, [className])}
             {...otherProps}
         >
             {children}
