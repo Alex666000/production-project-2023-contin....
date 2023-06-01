@@ -28,6 +28,7 @@ module.exports = {
     'react/jsx-indent-props': [2, 4],
     // отступ табов для js
     'react/jsx-indent': ['error', 6],
+    // eslint-disable-next-line max-len
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
@@ -50,12 +51,8 @@ module.exports = {
     // на нарушение этого правила выскакивать ошибка будет что не перевели текст
     // markupOnly - ругается на отсутствие только перевода внутри jsx
     'i18next/no-literal-string': ['warn', { markupOnly: true }],
-    'max-len': [
-      'error',
-      {
-        code: 120,
-      },
-    ],
+    // сколько угодно длинные комменты делаем + длинна строки кода = 120 символов а если больше покажи ошибку
+    'max-len': ['error', { ignoreComments: true, code: 120 }],
   },
   globals: {
     __IS_DEV__: true,

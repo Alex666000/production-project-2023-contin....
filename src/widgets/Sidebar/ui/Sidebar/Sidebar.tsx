@@ -20,9 +20,16 @@ export const Sidebar = ({ className }: SidebarProps) => {
   return (
         <div
             // сворачиваем или разворачиваем
-            className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
+            className={classNames(cls.Sidebar, {
+              [cls.collapsed]: collapsed,
+            }, [className])}
         >
-              <button type="button" onClick={onToggle}>{toggleButtonText}</button>
+              <button
+                  type="button"
+                  onClick={onToggle}
+              >
+                    {toggleButtonText}
+              </button>
               <div className={cls.switchers}>
                     <ThemeSwitcher />
                     <LangSwitcher className={cls.lang} />
