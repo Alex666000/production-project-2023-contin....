@@ -1,17 +1,17 @@
 .AppLink {
-  color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 // Стили для каждой из тем - значение из enum в  AppLink
 .primary {
-  color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 // Стили для каждой из тем - значение из enum в  AppLink
 .secondary {
-  color: var(--inverted-primary-color);
+    color: var(--inverted-primary-color);
 }
 
 .red {
-  color: red;
+    color: red;
 }

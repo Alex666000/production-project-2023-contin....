@@ -1,27 +1,29 @@
 .Sidebar {
-  // распологается на всю высоту стр. за исключением шапки === Навбара...
-  height: calc(100vh - var(--navbar-height));
-  width: var(--sidebar-width);
-  // цвет заднего фона такой же как и у Навбара
-  background: var(--inverted-bg-color);
+    // распологается на всю высоту стр. за исключением шапки === Навбара...
+    height: calc(100vh - var(--navbar-height));
+    width: var(--sidebar-width);
 
-  // чтобы кнопку поставить на правильное место
-  position: relative;
-  transition: width 0.4s;
+    // цвет заднего фона такой же как и у Навбара
+    background: var(--inverted-bg-color);
+
+    // чтобы кнопку поставить на правильное место
+    position: relative;
+    transition: width 0.4s;
 }
 
 .collapsed {
-  width: var(--sidebar-width-collapsed);
+    width: var(--sidebar-width-collapsed);
 }
 
 // Переключатели переносим вниз...
 .switchers {
-  position: absolute;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
+
 .lang {
-  margin-left: 20px;
+    margin-left: 20px;
 }
