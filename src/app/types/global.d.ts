@@ -1,6 +1,5 @@
 // глобальные типы (глобальная декларация типов) -- для настройки вебпака
 
-
 declare module '*.scss' {
     interface IClassNames {
         [className: string]: string
@@ -23,4 +22,3 @@ declare module '*.svg' {
 }
 
 declare const __IS_DEV__: boolean;
-
