@@ -41,10 +41,26 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid'],
+            },
+        ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
     },
     globals: {
         __IS_DEV__: true,
     },
+    // переопределить  какие-то правило Eslint для определенного типа файлов
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            // в тестовых файлах отключаем перевод
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 };
