@@ -40,6 +40,10 @@
   },
   "include": [
     // путь до файлика
-    "./config/jest/setupTests.ts"
+    "./config/jest/setupTests.ts",
+    // убирает проблемы с импортом module.scss
+        "./src/**/*.ts",
+        "./src/**/*.tsx",
   ]
 }
+
