@@ -37,5 +37,9 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    // путь до файлика
+    "./config/jest/setupTests.ts"
+  ]
 }
