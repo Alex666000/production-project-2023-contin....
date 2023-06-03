@@ -3,7 +3,6 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
 describe('Button', () => {
     test('Test render', () => {
-        // отрисуем кнопку
         render(<Button>TEST</Button>);
         expect(screen.getByText('TEST')).toBeInTheDocument();
     });
@@ -14,8 +13,3 @@ describe('Button', () => {
         screen.debug();
     });
 });
-/*
-screen - проверит отрисовалась ли?
-getByText - попробуем кнопку найти
- */
-// 5.16.2
