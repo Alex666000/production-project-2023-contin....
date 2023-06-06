@@ -7,6 +7,7 @@ interface LoginModalProps {
     isOpen: boolean;
     onClose: () => void;
 }
+//
 
 export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => (
     <Modal
