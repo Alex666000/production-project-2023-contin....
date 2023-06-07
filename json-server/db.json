@@ -1,6 +1,10 @@
 {
   "posts": [
-    {"id": 1, "title": "json-server", "userId": 1},
+    {
+      "id": 1,
+      "title": "json-server",
+      "userId": 1
+    },
     {
       "id": 2,
       "title": "json-server",

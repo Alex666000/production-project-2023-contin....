@@ -12,7 +12,16 @@
   "О сайте": "About us",
   "Переключить": "Переключить",
   "Короткий язык": "En",
-  "Войти": "Войти",
-  "Введите пароль": "Введите пароль",
-  "Введите username": "Введите username"
+  "Войти": "Login",
+  "increment": "increment",
+  "decrement": "decrement",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Auth form",
+  "Вы ввели неверный логин или пароль": "Uncorrect username or password",
+  "Выйти": "Выйти",
+  "LangSwitcher": {
+    "shortLanguage": "LangSwitcher.shortLanguage",
+    "language": "LangSwitcher.language"
+  }
 }

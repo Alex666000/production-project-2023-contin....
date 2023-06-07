@@ -6,7 +6,6 @@
 import path from 'path';
 
 export default {
-    // для объявления глобальных переменных
     globals: {
         __IS_DEV__: true,
     },
