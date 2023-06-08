@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { Dispatch } from '@reduxjs/toolkit';
+import { StateSchema } from 'app/providers/StoreProvider';
 import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { loginByUsername } from './loginByUsername';
@@ -40,16 +42,13 @@ describe('loginByUsername.test', () => {
     //     expect(result.payload).toBe('error');
     // });
 
-    // Благодаря классу TestAsyncThunk пишем тесты на санки коротко
     test('success login', async () => {
         const userValue = { username: '123', id: '1' };
         mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
 
-        // создаем объект из класса что мы сделали
         const thunk = new TestAsyncThunk(loginByUsername);
-        // вызываем санку
         const result = await thunk.callThunk({ username: '123', password: '123' });
-        // dispatch получаем из объекта thunk
+
         expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
         expect(thunk.dispatch).toHaveBeenCalledTimes(3);
         expect(mockedAxios.post).toHaveBeenCalled();

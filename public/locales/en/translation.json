@@ -19,9 +19,5 @@
   "Введите пароль": "Enter password",
   "Форма авторизации": "Auth form",
   "Вы ввели неверный логин или пароль": "Uncorrect username or password",
-  "Выйти": "Выйти",
-  "LangSwitcher": {
-    "shortLanguage": "LangSwitcher.shortLanguage",
-    "language": "LangSwitcher.language"
-  }
+  "Выйти": "Выйти"
 }

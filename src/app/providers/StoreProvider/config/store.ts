@@ -4,9 +4,11 @@ import { userReducer } from 'entities/User';
 import { StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 
-export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
+export function createReduxStore(
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>,
+) {
     const rootReducers: ReducersMapObject<StateSchema> = {
-        // полученные из вне асинхронные редюсеры разворачиваем в корневой редюсер
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
@@ -25,3 +27,5 @@ export function createReduxStore(initialState?: StateSchema, asyncReducers?: Red
 
     return store;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
