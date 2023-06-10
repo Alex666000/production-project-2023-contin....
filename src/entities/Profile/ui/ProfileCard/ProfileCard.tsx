@@ -2,49 +2,48 @@ import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
-import { Profile } from 'entities/Profile';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency } from 'entities/Currency/model/types/currency';
 import { CurrencySelect } from 'entities/Currency';
 import { Country } from 'entities/Country/model/types/country';
-import React from 'react';
 import { CountrySelect } from 'entities/Country';
 import cls from './ProfileCard.module.scss';
+import { Profile } from '../../model/types/profile';
 
 interface ProfileCardProps {
     className?: string;
     data?: Profile;
     error?: string;
     isLoading?: boolean;
-    readonly?: boolean
-    onChangeFirstName?: (value?: string) => void
-    onChangeLastName?: (value?: string) => void
-    onChangeAge?: (value?: string) => void,
-    onChangeCity?: (value?: string) => void,
-    onChangeUsername?: (value?: string) => void,
-    onChangeAvatar?: (value?: string) => void,
-    onChangeCurrency?: (currency?: Currency) => void,
-    onChangeCountry?: (country?: Country) => void,
+    readonly?: boolean;
+    onChangeLastname?: (value?: string) => void;
+    onChangeFirstname?: (value?: string) => void;
+    onChangeCity?: (value?: string) => void;
+    onChangeAge?: (value?: string) => void;
+    onChangeUsername?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
+    onChangeCurrency?: (currency: Currency) => void;
+    onChangeCountry?: (country: Country) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
-    const { t } = useTranslation('profile');
     const {
         className,
         data,
-        error,
         isLoading,
+        error,
         readonly,
-        onChangeFirstName,
-        onChangeLastName,
+        onChangeFirstname,
+        onChangeLastname,
         onChangeAge,
         onChangeCity,
-        onChangeUsername,
         onChangeAvatar,
-        onChangeCurrency,
+        onChangeUsername,
         onChangeCountry,
+        onChangeCurrency,
     } = props;
+    const { t } = useTranslation('profile');
 
     if (isLoading) {
         return (
@@ -68,7 +67,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
     }
 
     const mods: Mods = {
-        // в момент когда изменяем форму такой стиль(цвет рамки) применим чтобы отличать форму редактируемую от не
         [cls.editing]: !readonly,
     };
 
@@ -84,14 +82,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     value={data?.first}
                     placeholder={t('Ваше имя')}
                     className={cls.input}
-                    onChange={onChangeFirstName}
+                    onChange={onChangeFirstname}
                     readonly={readonly}
                 />
                 <Input
                     value={data?.lastname}
                     placeholder={t('Ваша фамилия')}
                     className={cls.input}
-                    onChange={onChangeLastName}
+                    onChange={onChangeLastname}
                     readonly={readonly}
                 />
                 <Input
@@ -102,15 +100,15 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     readonly={readonly}
                 />
                 <Input
-                    value={data?.username}
-                    placeholder={t('Введите имя пользователя')}
+                    value={data?.city}
+                    placeholder={t('Город')}
                     className={cls.input}
                     onChange={onChangeCity}
                     readonly={readonly}
                 />
                 <Input
-                    value={data?.age}
-                    placeholder={t('Ваш возраст')}
+                    value={data?.username}
+                    placeholder={t('Введите имя пользователя')}
                     className={cls.input}
                     onChange={onChangeUsername}
                     readonly={readonly}

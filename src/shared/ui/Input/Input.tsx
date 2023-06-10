@@ -11,7 +11,7 @@ interface InputProps extends HTMLInputProps {
     value?: string | number;
     onChange?: (value: string) => void;
     autofocus?: boolean;
-    readonly?: boolean
+    readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -25,7 +25,6 @@ export const Input = memo((props: InputProps) => {
         readonly,
         ...otherProps
     } = props;
-
     const ref = useRef<HTMLInputElement>(null);
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
@@ -61,7 +60,7 @@ export const Input = memo((props: InputProps) => {
     };
 
     return (
-        <div className={classNames(cls.InputWrapper, mods, [className])}>
+        <div className={classNames(cls.InputWrapper, {}, [className])}>
             {placeholder && (
                 <div className={cls.placeholder}>
                     {`${placeholder}>`}

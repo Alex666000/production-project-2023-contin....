@@ -8,7 +8,6 @@ import { getUserAuthData } from 'entities/User';
 const AppRouter = () => {
     const isAuth = useSelector(getUserAuthData);
 
-    // отфильтровываем не нужные маршруты и провтаризован ли пользователь
     const routes = useMemo(() => Object.values(routeConfig).filter((route) => {
         if (route.authOnly && !isAuth) {
             return false;

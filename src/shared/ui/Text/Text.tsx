@@ -6,6 +6,7 @@ export enum TextTheme {
     PRIMARY = 'primary',
     ERROR = 'error',
 }
+
 export enum TextAlign {
     RIGHT = 'right',
     LEFT = 'left',
@@ -17,7 +18,7 @@ interface TextProps {
     title?: string;
     text?: string;
     theme?: TextTheme;
-    align?: TextAlign
+    align?: TextAlign;
 }
 
 export const Text = memo((props: TextProps) => {
@@ -25,12 +26,11 @@ export const Text = memo((props: TextProps) => {
         className,
         text,
         title,
-        align = TextAlign.LEFT,
         theme = TextTheme.PRIMARY,
+        align = TextAlign.LEFT,
     } = props;
 
     const mods: Mods = {
-        // добавится 2 класса - приплюсуются: можно в additional было дабавить но без разницы
         [cls[theme]]: true,
         [cls[align]]: true,
     };

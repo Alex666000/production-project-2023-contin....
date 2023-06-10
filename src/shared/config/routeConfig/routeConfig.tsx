@@ -4,9 +4,8 @@ import { AboutPage } from 'pages/AboutPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { ProfilePage } from 'pages/ProfilePage';
 
-type AppRoutesProps = RouteProps & {
-    // если true то маршрут доступен только авторизованным пользователям
-    authOnly?: boolean
+export type AppRoutesProps = RouteProps & {
+    authOnly?: boolean;
 }
 
 export enum AppRoutes {

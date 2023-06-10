@@ -4,7 +4,6 @@ import cls from './Select.module.scss';
 
 export interface SelectOption {
     value: string;
-    // текст внутри опции
     content: string;
 }
 
@@ -12,7 +11,6 @@ interface SelectProps {
     className?: string;
     label?: string;
     options?: SelectOption[];
-    // выбранная опция
     value?: string;
     onChange?: (value: string) => void;
     readonly?: boolean;
@@ -23,14 +21,12 @@ export const Select = memo((props: SelectProps) => {
         className,
         label,
         options,
+        onChange,
         value,
         readonly,
-        onChange,
     } = props;
 
-    // наверх будем отдавать не event а уже выбранное значение
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-        // onChange?.(e.target.value);
         if (onChange) {
             onChange(e.target.value);
         }
@@ -52,7 +48,7 @@ export const Select = memo((props: SelectProps) => {
         <div className={classNames(cls.Wrapper, mods, [className])}>
             {label && (
                 <span className={cls.label}>
-                    {`${label} > `}
+                    {`${label}>`}
                 </span>
             )}
             <select

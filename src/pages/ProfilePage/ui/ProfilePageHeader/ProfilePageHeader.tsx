@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -12,10 +12,13 @@ interface ProfilePageHeaderProps {
     className?: string;
 }
 
-export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
-    const { t } = useTranslation();
+export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
+    const {
+        className,
+    } = props;
 
-    // флаг readonly для отрисовки нужных кнопок -- редактировать или отмена и сохранить
+    const { t } = useTranslation('profile');
+
     const readonly = useSelector(getProfileReadonly);
     const dispatch = useAppDispatch();
 
@@ -60,7 +63,6 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                         >
                             {t('Сохранить')}
                         </Button>
-                        )
                     </>
                 )}
         </div>

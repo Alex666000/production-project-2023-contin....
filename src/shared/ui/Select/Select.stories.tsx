@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Select } from './Select';
-import AvatarImg from './storybook.jpg';
+import { Select } from 'shared/ui/Select/Select';
 
 export default {
     title: 'shared/Select',
@@ -19,6 +18,5 @@ Primary.args = {
     options: [
         { value: '123', content: 'Первый пункт' },
         { value: '1234', content: 'Второй пункт' },
-        { value: '12345', content: 'Третий пункт' },
     ],
 };
