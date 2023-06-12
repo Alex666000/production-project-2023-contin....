@@ -6,7 +6,6 @@ interface SkeletonProps {
     className?: string;
     height?: string | number;
     width?: string | number;
-    // круглый или квадратный скелетон делать
     border?: string;
 }
 

@@ -2,6 +2,8 @@
   "extends": "stylelint-config-standard-scss",
   "rules": {
     "indentation": [4],
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "color-named": "always-where-possible",
+    "max-nesting-depth": 5
   }
 }

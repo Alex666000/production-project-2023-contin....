@@ -25,7 +25,6 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.ABOUT]: '/about',
     [AppRoutes.PROFILE]: '/profile',
     [AppRoutes.ARTICLES]: '/articles',
-    // надо будет добавлять id статьи  которую мы просматриваем
     [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
     // последний
     [AppRoutes.NOT_FOUND]: '*',
@@ -52,7 +51,6 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     },
     [AppRoutes.ARTICLE_DETAILS]: {
         path: `${RoutePath.article_details}:id`,
-        // под капотом тут lazy компоненты
         element: <ArticleDetailsPage />,
         authOnly: true,
     },

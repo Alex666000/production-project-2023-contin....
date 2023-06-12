@@ -24,7 +24,6 @@ const AppRouter = () => {
 
     return (
         <Routes>
-            {/* получаем список всех маршрутов */}
             {Object.values(routeConfig).map(renderWithWrapper)}
         </Routes>
     );

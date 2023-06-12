@@ -28,7 +28,6 @@ export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [
     ThemeDecorator(Theme.DARK),
-    // с помощью StoreDecorator можем определить инишл стейт
     StoreDecorator({
         user: { authData: {} },
     }),
