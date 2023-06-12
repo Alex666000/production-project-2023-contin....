@@ -116,6 +116,54 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "article": "1",
+      "userId": "1",
+      "text": "1234",
+      "id": "G-tM7w7"
+    },
+    {
+      "article": "1",
+      "userId": "1",
+      "text": "gggggggggggggggggg",
+      "id": "gdghfrn"
+    },
+    {
+      "article": "1",
+      "userId": "1",
+      "text": "yyyyyyyyyyyyyy",
+      "id": "yX9RxBr"
+    },
+    {
+      "article": "1",
+      "userId": "2",
+      "text": "yyyyyyyyyyyyyyyyyyyyy",
+      "id": "d9IOcJw"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "rrrrrrrrrrrrrrrrrrrrrrrr",
+      "id": "fT_D-f0"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "11111111111111111111111",
+      "id": "wdKKeI5"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "222222222222222222222222222",
+      "id": "01j4w7P"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "333333333",
+      "id": "dymmvqm"
     }
   ],
   "users": [
@@ -134,14 +182,28 @@
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkxOjAc2yAFQTLCENBI1pM9kB2gA7FuY08fg&usqp=CAU"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFTZXG5AKHXiqRs6MxuQSvV57VpcAg_tko0g&usqp=CAU"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFTZXG5AKHXiqRs6MxuQSvV57VpcAg_tko0g&usqp=CAU"
+    },
+    {
+      "id": "2",
+      "first": "Sasha",
+      "lastname": "Bogdanov",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkxOjAc2yAFQTLCENBI1pM9kB2gA7FuY08fg&usqp=CAU"
+    }
+  ]
 }
