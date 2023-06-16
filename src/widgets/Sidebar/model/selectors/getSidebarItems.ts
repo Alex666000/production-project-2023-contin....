@@ -22,6 +22,7 @@ export const getSidebarItems = createSelector(
                 text: 'О сайте',
             },
         ];
+
         if (userData) {
             sidebarItemsList.push(
                 {

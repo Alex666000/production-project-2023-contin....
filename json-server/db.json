@@ -19,6 +19,7 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
+      "userId": "1",
       "type": [
         "IT"
       ],
@@ -34,12 +35,12 @@
           ]
         },
         {
-          "id": "2",
+          "id": "4",
           "type": "CODE",
           "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
         },
         {
-          "id": "3",
+          "id": "5",
           "type": "TEXT",
           "title": "Заголовок этого блока",
           "paragraphs": [
@@ -48,18 +49,18 @@
           ]
         },
         {
-          "id": "4",
+          "id": "2",
           "type": "IMAGE",
           "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
           "title": "Рисунок 1 - скриншот сайта"
         },
         {
-          "id": "5",
+          "id": "3",
           "type": "CODE",
           "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
         },
         {
-          "id": "6",
+          "id": "7",
           "type": "TEXT",
           "title": "Заголовок этого блока",
           "paragraphs": [
@@ -68,13 +69,13 @@
           ]
         },
         {
-          "id": "7",
+          "id": "8",
           "type": "IMAGE",
           "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
           "title": "Рисунок 1 - скриншот сайта"
         },
         {
-          "id": "8",
+          "id": "9",
           "type": "TEXT",
           "title": "Заголовок этого блока",
           "paragraphs": [
@@ -82,20 +83,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "10",
-      "type": "TEXT",
-      "title": "Заголовок этого блока",
-      "paragraphs": [
-        "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
-      ]
-    },
-    {
-      "id": "9",
-      "type": "IMAGE",
-      "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-      "title": "Рисунок 1 - скриншот сайта"
     }
   ],
   "comments": [
@@ -118,52 +105,52 @@
       "userId": "1"
     },
     {
-      "article": "1",
+      "articleId": "1",
       "userId": "1",
-      "text": "1234",
-      "id": "G-tM7w7"
+      "text": "123",
+      "id": "4Cljjzl"
     },
     {
-      "article": "1",
+      "articleId": "1",
       "userId": "1",
-      "text": "gggggggggggggggggg",
-      "id": "gdghfrn"
-    },
-    {
-      "article": "1",
-      "userId": "1",
-      "text": "yyyyyyyyyyyyyy",
-      "id": "yX9RxBr"
-    },
-    {
-      "article": "1",
-      "userId": "2",
-      "text": "yyyyyyyyyyyyyyyyyyyyy",
-      "id": "d9IOcJw"
+      "text": "123asfasf",
+      "id": "AEM4Dvc"
     },
     {
       "articleId": "1",
       "userId": "2",
-      "text": "rrrrrrrrrrrrrrrrrrrrrrrr",
-      "id": "fT_D-f0"
+      "text": "123asfasf",
+      "id": "IFEOWl0"
     },
     {
       "articleId": "1",
       "userId": "2",
-      "text": "11111111111111111111111",
-      "id": "wdKKeI5"
+      "text": "привет мир",
+      "id": "dBacYRZ"
     },
     {
       "articleId": "1",
       "userId": "2",
-      "text": "222222222222222222222222222",
-      "id": "01j4w7P"
+      "text": "хехехехе",
+      "id": "rBX_C-e"
     },
     {
       "articleId": "1",
       "userId": "2",
-      "text": "333333333",
-      "id": "dymmvqm"
+      "text": "фыафыа",
+      "id": "5k0ApX-"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "sdfsdfsd",
+      "id": "w-HDIRq"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asdasdasd",
+      "id": "MVvGQoZ"
     }
   ],
   "users": [
@@ -172,14 +159,14 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_l-1A_k4j7XKO62igLXtvCZ6VuuhV50PVyg&usqp=CAU"
+      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkxOjAc2yAFQTLCENBI1pM9kB2gA7FuY08fg&usqp=CAU"
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "profile": [
@@ -192,18 +179,18 @@
       "country": "Belarus",
       "city": "Moscow",
       "username": "admin213",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFTZXG5AKHXiqRs6MxuQSvV57VpcAg_tko0g&usqp=CAU"
+      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
     },
     {
       "id": "2",
-      "first": "Sasha",
-      "lastname": "Bogdanov",
+      "first": "ulbi tv",
+      "lastname": "asf",
       "age": 465,
       "currency": "RUB",
       "country": "Russia",
       "city": "Moscow",
-      "username": "admin213",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkxOjAc2yAFQTLCENBI1pM9kB2gA7FuY08fg&usqp=CAU"
+      "username": "ulbi tv",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ]
 }
