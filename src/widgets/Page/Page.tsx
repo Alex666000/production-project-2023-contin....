@@ -24,7 +24,6 @@ export const Page = memo((props: PageProps) => {
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
-    // позиция скролла которую будем восстанавливать
     const scrollPosition = useSelector(
         (state: StateSchema) => getUIScrollByPath(state, pathname),
     );
@@ -36,17 +35,11 @@ export const Page = memo((props: PageProps) => {
     });
 
     useInitialEffect(() => {
-        // Восстанавливаем скролл после того как перешли с однои  страницы на другую
-        // Передаем scrollPosition
         wrapperRef.current.scrollTop = scrollPosition;
     });
 
-    // useThrottle - выполнить только одно событие в промежуток времени - сохранять позицию скролла раз в секунду например тем самым
-    // каждую милисекунду событие скролла не будет
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        // console.log('scroll', e.currentTarget.scrollTop);
         dispatch(uiActions.setScrollPosition({
-            // Сохраняем скролл
             position: e.currentTarget.scrollTop,
             path: pathname,
         }));
@@ -59,7 +52,7 @@ export const Page = memo((props: PageProps) => {
             onScroll={onScroll}
         >
             {children}
-            <div ref={triggerRef} />
+            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
         </section>
     );
 });

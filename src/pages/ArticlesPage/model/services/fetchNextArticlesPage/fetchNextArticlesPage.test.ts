@@ -7,7 +7,6 @@ jest.mock('../fetchArticlesList/fetchArticlesList');
 describe('fetchNextArticlesPage.test', () => {
     test('success', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-            // Инишл данные перед началом тестирования
             articlesPage: {
                 page: 2,
                 ids: [],
@@ -21,7 +20,6 @@ describe('fetchNextArticlesPage.test', () => {
         await thunk.callThunk();
 
         expect(thunk.dispatch).toBeCalledTimes(4);
-        // Была вызвана с нужным нам аргументом чтобы получить новую порцию данных
         expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
     });
     test('fetchAritcleList not called', async () => {
