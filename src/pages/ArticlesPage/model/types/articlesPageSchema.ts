@@ -10,4 +10,6 @@ export interface ArticlesPageSchema extends EntityState<Article> {
     page: number
     limit?: number
     hasMore: boolean // Загрузили все статьи или есть порция которую можем загрузить?
+    // Инициализировался ранее стейт или нет?
+    _inited: boolean
 }
