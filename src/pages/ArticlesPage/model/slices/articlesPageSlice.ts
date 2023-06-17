@@ -67,6 +67,7 @@ const articlesPageSlice = createSlice({
                 state.isLoading = true;
 
                 if (action.meta.arg.replace) {
+                    // очищаем массив
                     articlesAdapter.removeAll(state);
                 }
             })
@@ -80,6 +81,7 @@ const articlesPageSlice = createSlice({
                 if (action.meta.arg.replace) {
                     articlesAdapter.setAll(state, action.payload);
                 } else {
+                    // addMany - добавляет новый массив с постами в конец
                     articlesAdapter.addMany(state, action.payload);
                 }
             })

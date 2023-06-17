@@ -17,6 +17,7 @@ export const initArticlesPage = createAsyncThunk<
             const inited = getArticlesPageInited(getState());
 
             if (!inited) {
+                // вытащили нужные параметры из урла
                 const orderFromUrl = searchParams.get('order') as SortOrder;
                 const sortFromUrl = searchParams.get('sort') as ArticleSortField;
                 const searchFromUrl = searchParams.get('search');
