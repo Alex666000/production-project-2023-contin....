@@ -34,6 +34,7 @@ export interface StateSchema {
 }
 
 export type StateSchemaKey = keyof StateSchema;
+// @ts-ignore
 export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReducerManager {
