@@ -23,7 +23,6 @@ export const fetchArticlesList = createAsyncThunk<
         'articlesPage/fetchArticlesList',
         async (props, thunkApi) => {
             const { extra, rejectWithValue, getState } = thunkApi;
-            // получили из стейта поля
             const limit = getArticlesPageLimit(getState());
             const sort = getArticlesPageSort(getState());
             const order = getArticlesPageOrder(getState());
@@ -33,7 +32,6 @@ export const fetchArticlesList = createAsyncThunk<
 
             try {
                 addQueryParams({
-                    // поля по которым сортировать
                     sort, order, search, type,
                 });
                 const response = await extra.api.get<Article[]>('/articles', {

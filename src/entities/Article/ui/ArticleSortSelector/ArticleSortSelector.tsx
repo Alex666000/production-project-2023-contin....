@@ -10,8 +10,8 @@ interface ArticleSortSelectorProps {
     className?: string;
     sort: ArticleSortField;
     order: SortOrder;
-    onChangeSort: (newSort: ArticleSortField) => void;
     onChangeOrder: (newOrder: SortOrder) => void;
+    onChangeSort: (newSort: ArticleSortField) => void;
 }
 
 export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
@@ -21,7 +21,6 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     const { t } = useTranslation();
 
     const orderOptions = useMemo<SelectOption[]>(() => [
-        // Направление сортировки
         {
             value: 'asc',
             content: t('возрастанию'),
@@ -33,7 +32,6 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     ], [t]);
 
     const sortFieldOptions = useMemo<SelectOption[]>(() => [
-        // Поля для сортировки
         {
             value: ArticleSortField.CREATED,
             content: t('дате создания'),

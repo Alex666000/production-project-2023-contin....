@@ -1,9 +1,7 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Article } from 'entities/Article';
-import {
-    fetchArticleRecommendations,
-} from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { ArticleDetailsRecommendationsSchema } from '../types/ArticleDetailsRecommendationsSchema';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
@@ -34,7 +32,6 @@ const articleDetailsPageRecommendationsSlice = createSlice({
                 action,
             ) => {
                 state.isLoading = false;
-                // Полученные статьи в стейт закинуть setAll
                 recommendationsAdapter.setAll(state, action.payload);
             })
             .addCase(fetchArticleRecommendations.rejected, (state, action) => {
@@ -44,4 +41,6 @@ const articleDetailsPageRecommendationsSlice = createSlice({
     },
 });
 
-export const { reducer: articleDetailsPageRecommendationsReducer } = articleDetailsPageRecommendationsSlice;
+export const {
+    reducer: articleDetailsPageRecommendationsReducer,
+} = articleDetailsPageRecommendationsSlice;

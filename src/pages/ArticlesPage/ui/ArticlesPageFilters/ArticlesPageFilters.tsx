@@ -36,7 +36,6 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const search = useSelector(getArticlesPageSearch);
     const type = useSelector(getArticlesPageType);
 
-    // внутри функции данные подгружаем с сервера
     const fetchData = useCallback(() => {
         dispatch(fetchArticlesList({ replace: true }));
     }, [dispatch]);
@@ -55,7 +54,6 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
 
     const onChangeOrder = useCallback((newOrder: SortOrder) => {
         dispatch(articlesPageActions.setOrder(newOrder));
-        // Отправили запрос и сбрасываем стр на первую 26 мин
         dispatch(articlesPageActions.setPage(1));
         fetchData();
     }, [dispatch, fetchData]);
@@ -69,8 +67,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const onChangeType = useCallback((value: ArticleType) => {
         dispatch(articlesPageActions.setType(value));
         dispatch(articlesPageActions.setPage(1));
-        debouncedFetchData();
-    }, [dispatch, debouncedFetchData]);
+        fetchData();
+    }, [dispatch, fetchData]);
 
     return (
         <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
