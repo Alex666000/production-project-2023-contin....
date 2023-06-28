@@ -1,5 +1,5 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import React, { DetailedHTMLProps, ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import cls from './Flex.module.scss';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
@@ -7,7 +7,6 @@ export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '32';
 
-// сопоставление пропса с классом который хотим повесить (маперы)
 const justifyClasses: Record<FlexJustify, string> = {
     start: cls.justifyStart,
     center: cls.justifyCenter,
@@ -33,16 +32,15 @@ const gapClasses: Record<FlexGap, string> = {
     32: cls.gap32,
 };
 
-type DivProps = DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
-export interface FlexProps extends DivProps{
+export interface FlexProps extends DivProps {
     className?: string;
     children: ReactNode;
     justify?: FlexJustify;
     align?: FlexAlign;
     direction: FlexDirection;
     gap?: FlexGap;
-    // растягивает блок на вю ширину экрана width 100%
     max?: boolean;
 }
 
@@ -54,7 +52,6 @@ export const Flex = (props: FlexProps) => {
         align = 'center',
         direction = 'row',
         gap,
-        // растягивает блок на вю ширину экрана width 100%
         max,
     } = props;
 
@@ -65,7 +62,7 @@ export const Flex = (props: FlexProps) => {
         directionClasses[direction],
         gap && gapClasses[gap],
     ];
-    // навешивается по условию
+
     const mods: Mods = {
         [cls.max]: max,
     };
