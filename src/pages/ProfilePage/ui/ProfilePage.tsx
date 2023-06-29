@@ -14,7 +14,6 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const { id } = useParams<{ id: string }>();
     const { t } = useTranslation('profile');
 
-    // если отработал роут у когорого нет id
     if (!id) {
         return <Text text={t('Профиль не найден')} />;
     }

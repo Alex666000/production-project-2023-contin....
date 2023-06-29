@@ -63,7 +63,6 @@ export const Text = memo((props: TextProps) => {
             {title && (
                 <HeaderTag
                     className={cls.title}
-                    // .Header - то что мы тестируем
                     data-testid={`${dataTestId}.Header`}
                 >
                     {title}
