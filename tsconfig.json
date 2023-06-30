@@ -37,6 +37,7 @@
     //- это файлы в которых находятся только типы и интерфейсы
     "isolatedModules": true
   },
+  //
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
