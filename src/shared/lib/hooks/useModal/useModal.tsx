@@ -3,19 +3,15 @@ import {
 } from 'react';
 import { useTheme } from '@/app/providers/ThemeProvider';
 
-interface useModalProps {
-    onClose?: () => void
-    isOpen?: boolean
-    animationDelay: number
+interface UseModalProps {
+    onClose?: () => void;
+    isOpen?: boolean;
+    animationDelay: number;
 }
 
-export function useModal(props: useModalProps) {
-    const {
-        isOpen,
-        animationDelay,
-        onClose,
-    } = props;
-
+export function useModal({
+    animationDelay, isOpen, onClose,
+}: UseModalProps) {
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
