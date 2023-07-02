@@ -1,38 +1,31 @@
 import { memo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './StartRating.module.scss';
+import cls from './StarRating.module.scss';
 import { Icon } from '@/shared/ui/Icon/Icon';
 import StarIcon from '@/shared/assets/icons/star.svg';
 
-interface StartRatingProps {
+interface StarRatingProps {
     className?: string;
-    onSelect?: (startCount: number) => void;
+    onSelect?: (starsCount: number) => void;
     size?: number;
-    selectedStars?: number
+    selectedStars?: number;
 }
 
-export const StartRating = memo((props: StartRatingProps) => {
-    const {
-        className,
-        onSelect,
-        size = 30,
-        selectedStars = 0,
-    } = props;
+const stars = [1, 2, 3, 4, 5];
 
-    const [isHovered, setIsHovered] = useState(false);
-    // на какую звезду навели
-    const [currentStarsCount, setCurrentStarsCount] = useState(0);
-    // звезда выбрана не ноль...не selectedStars = 0
+export const StarRating = memo((props: StarRatingProps) => {
+    const {
+        className, size = 30, selectedStars = 0, onSelect,
+    } = props;
+    const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
-    // навели
     const onHover = (starsCount: number) => () => {
         if (!isSelected) {
             setCurrentStarsCount(starsCount);
         }
     };
 
-    // мышкой за пределы звезд вышли
     const onLeave = () => {
         if (!isSelected) {
             setCurrentStarsCount(0);
@@ -47,17 +40,13 @@ export const StartRating = memo((props: StartRatingProps) => {
         }
     };
 
-    const stars = [1, 2, 3, 4, 5];
-
     return (
-        <div className={classNames(cls.StartRating, {}, [className])}>
+        <div className={classNames(cls.StarRating, {}, [className])}>
             {stars.map((starNumber) => (
                 <Icon
                     className={classNames(
                         cls.starIcon,
                         { [cls.selected]: isSelected },
-                        /* starNumber - текущая звезда на которую направили
-                         (количечество звёзд) */
                         [currentStarsCount >= starNumber ? cls.hovered : cls.normal],
                     )}
                     Svg={StarIcon}
