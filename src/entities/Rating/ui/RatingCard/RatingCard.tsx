@@ -72,6 +72,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
             />
         </>
     );
+
     return (
         <Card className={classNames('', {}, [className])}>
             <VStack align="center" gap="8">
