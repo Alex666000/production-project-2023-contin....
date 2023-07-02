@@ -47,11 +47,21 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['border', 'as', 'role', 'data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap',
+                ignoreAttribute: [
+                    'as',
+                    'role',
+                    'data-testid',
+                    'to',
+                    'target',
+                    'justify',
+                    'align',
+                    'border',
+                    'direction',
+                    'gap',
                 ],
             },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 800 }],
+        'max-len': ['error', { ignoreComments: true, code: 125 }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
@@ -61,7 +71,14 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
         'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
-        'ulbi-tv-plugin/public-api-imports': ['error', { alias: '@' }],
+        'ulbi-tv-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                // чтобы понимать какие файлы тестовые паблики АПИ
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
