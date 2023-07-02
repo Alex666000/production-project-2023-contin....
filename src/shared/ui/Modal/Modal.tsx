@@ -25,11 +25,7 @@ export const Modal = (props: ModalProps) => {
         lazy,
     } = props;
 
-    const {
-        close,
-        isClosing,
-        isMounted,
-    } = useModal({
+    const { close, isClosing, isMounted } = useModal({
         animationDelay: ANIMATION_DELAY,
         onClose,
         isOpen,
