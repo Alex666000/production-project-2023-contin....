@@ -21,8 +21,6 @@ Normal.args = {
     articleId: '1',
 };
 Normal.decorators = [
-    // StoreDecorator - нужен так как там внутри используется редаксовский стейт с ним
-    // взаимодействуем
     StoreDecorator({
         user: {
             authData: { id: '1' },
