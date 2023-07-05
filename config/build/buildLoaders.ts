@@ -35,10 +35,9 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     return [
         fileLoader,
         svgLoader,
-        // babelLoader,
-        // typescriptLoader,
         codeBabelLoader,
         tsxCodeBabelLoader,
+        // typescriptLoader,
         cssLoader,
     ];
 }
