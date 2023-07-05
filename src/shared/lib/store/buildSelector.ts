@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { StateSchema } from '@/app/providers/StoreProvider';
 
-// то что возвращаем дженериком подхватывается и автоматически типизируется
 type Selector<T> = (state: StateSchema) => T;
 type Result<T> = [() => T, Selector<T>]
 

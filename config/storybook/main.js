@@ -18,4 +18,13 @@ module.exports = {
     core: {
         builder: 'webpack5',
     },
+    webpackFinal: async (config, { configType }) => {
+        // Отключаем минимизацию
+        config.optimization = {
+            ...config.optimization,
+            minimize: false,
+        };
+
+        return config;
+    },
 };

@@ -4,9 +4,7 @@ import {
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement>{
     className?: string;
-    // элемент который отображается в момент загрузки картинки
     fallback?: ReactElement;
-    // запасное изображение на случай если произошла ошибка
     errorFallback?: ReactElement;
 }
 
@@ -22,7 +20,6 @@ export const AppImage = memo((props: AppImageProps) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
-    // вызовется синхронно до того как компонент вмонтируется
     useLayoutEffect(() => {
         const img = new Image();
         img.src = src ?? '';
